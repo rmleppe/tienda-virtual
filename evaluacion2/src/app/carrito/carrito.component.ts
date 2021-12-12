@@ -18,7 +18,7 @@ export class CarritoComponent implements OnInit {
 
     this.userForm = this.fb.group({
       nombre: new FormControl('',[Validators.required,Validators.minLength(2)]),
-      rut: new FormControl('',[Validators.required,Validators.minLength(10)])
+      rut: new FormControl('',[Validators.required,Validators.minLength(9)])
       
      
     });
