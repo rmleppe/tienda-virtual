@@ -1,0 +1,50 @@
+.hero.is-primary {
+    background-color: #6785c1;
+    color: #fff;
+}
+
+.button.is-primary {
+    background-color: #6785c1;
+    border-color: transparent;
+    color: #fff;
+}
+
+.navbar.is-primary {
+    background-color: #6785c1;
+    color: black;
+}
+
+
+.bg-brand {
+    --bs-bg-opacity: 1;
+    background-color: #6785c1!important;
+}
+.btn-outline-success {
+    color: white;
+    border-color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+footer {
+    min-height: 70px;
+    background-color: #191919;
+    background-image: -moz-linear-gradient(top, #191919, #000000);
+    background-image: -o-linear-gradient(top, #191919, #000000);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #191919), color-stop(1, #000000));
+    background-image: -webkit-linear-gradient(#191919, #000000);
+    background-image: linear-gradient(top, #191919, #000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#191919', endColorStr='#000000');
+    border-top: 1px solid rgba(50, 50, 50, 0.3);
+    width: 100%;
+    position: relative;
+    clear: both;
+    margin-top: 0px;            
+    padding-top: 0px;
+    overflow: visible;
+    position: fixed;
+    bottom: 0;  
+              /* NUEVO */
+  }

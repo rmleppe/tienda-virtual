@@ -1,0 +1,114 @@
+<app-navbar></app-navbar>
+<br>
+<h1 style="text-align: center;">Registro de productos</h1>
+ 
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <form [formGroup]="userForm">
+        
+          <div class="form-row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label > Nombre:  </label>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-9">
+                    <input type="text" formControlName="nombre" class="form-control" placeholder="Ingrese nombre" required>
+                 </div>
+                 <div *ngIf="this.userForm.controls['nombre'].errors?.['required']" style="color: red; font-style: italic;">
+                  Debe completar nombre
+                </div>
+                 <div *ngIf="this.userForm.controls['nombre'].errors?.['minlength']" style="color: red; font-style: italic; "maxlength="10" >
+                  Debe tener minimo 2 caracteres
+                   </div>
+                   <br>
+                  
+              </div>
+              <div class="form-group">
+                  <label > Precio: </label>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-9">
+                      <input type="number" formControlName="precio" class="form-control" placeholder="Ingrese precio" required>
+                   </div>
+                   <div *ngIf="this.userForm.controls['precio'].errors?.['required']" style="color: red; font-style: italic;">
+                    Debe completar precio
+                  </div>
+                    <br>
+                </div>
+                <div class="form-group">
+                  <label > Descripcion: </label>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-9">
+                      <input type="text" formControlName="descripcion" class="form-control" placeholder="Ingrese descripción" required>
+                   </div>
+                   <div *ngIf="this.userForm.controls['descripcion'].errors?.['required']" style="color: red; font-style: italic;">
+                    Debe completar descripción
+                  </div>
+                    <br>
+                </div>
+                <!--Imagen-->
+                <div class="form-row">
+                  <div class="col-md-9">
+                    <input type='file' formControlName="imagen" (change)="readUrl($event)" class="form-control mr-sm-2">                
+                   </div>
+                
+                      
+              </div>
+                
+            <br>
+            <div class="form-row mt-4">
+              <div class="col-md-9">
+                <button type="button" class="btn btn-primary" (click)="addItem()">Agregar Producto</button> &nbsp; &nbsp; 
+                <button type="button" class="btn btn-secondary" (click)="reset()">Limpiar campos</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </form>
+    </div>
+    <!--SEGUNDA FILAAAAAAAAAAAAAAAAAA-->
+    <div class="col-lg-4" style="text-align: center;" >
+      <div class="col-md-8">
+        <input type="search" class="form-control" placeholder="Buscar por nombre..." [(ngModel)]="filterLista" name="filterLista"/> 
+        <br>
+      </div>
+           
+            <div class="row" *ngFor = "let item of listData | filter: filterLista">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-body">
+                    <img [src]="url">
+                    <h2 class="card-title">{{item.nombre}}</h2>
+                    <p class="card-text">${{item.precio}}</p>
+                    <p class="card-text">{{item.descripcion}}</p>
+                    <button type="button" class="btn btn-danger" (click)="removeItems(item)">Borrar</button>
+                    <button  class="btn btn-primary" (click)="addCarrito()">Agregar al carrito</button>
+
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+            
+           
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
+<app-footer></app-footer>
+   
+
+   
+
+    
+  

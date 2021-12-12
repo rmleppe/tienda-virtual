@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-brand">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="assets\Imagenes\ntt-data-logo.png" height="100" width="110"/></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contáctanos</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="/productoropa"
+                >Registro de productos</a
+              >
+            </li>
+
+            <li><a class="dropdown-item" href="/zapateria">Productos</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="btn btn-primary" (click)="onClick()">Carrito</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--API CLIMA-->
+    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-moon moon"></i>  
+    </div>  
+    <div class="weatherWidgetRow cloudDiv">
+      <i class="fas fa-cloud fa-3x cloud"></i>
+    </div>
+    <div class="celcius" style="font-size: 30px; margin-top: 5px; margin-right: 50px;">
+      {{ WeatherData.temp_celcius }}°
+      <div class="weatherWidgetRow" style="font-size: 20px; margin-top: 10px">
+      {{ WeatherData.name }}
+      </div> 
+    </div>
+    <!--<div class="maxmin" style="font-size: 12px; margin-top: 5px; ">
+      {{ WeatherData.temp_min }}° / {{ WeatherData.temp_max }}°
+    </div>-->
+    
+  </div>
+</nav>
