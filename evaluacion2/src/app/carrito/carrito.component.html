@@ -14,7 +14,7 @@
                     </div>
                     <br>
                     <label>Rut:</label>
-                    <input type="number" class="form-control" formControlName="rut" placeholder="Ingrese rut sin puntos sin guion">
+                    <input type="text" class="form-control" formControlName="rut" placeholder="Ingrese rut sin puntos con guion">
                     <div *ngIf="this.userForm.controls['rut'].errors?.['minlength']"style="color: red; font-style: italic;">
                         Rut inválido
                      </div><br>
