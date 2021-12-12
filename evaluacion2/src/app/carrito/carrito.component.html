@@ -1,5 +1,49 @@
 <app-navbar></app-navbar>
 
+    <br>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="userForm">
+                    <label>Nombre:</label>
+                    
+                    <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese nombre" required>
+                    <div *ngIf="this.userForm.controls['nombre'].errors?.['required']" style="color: red; font-style: italic;">
+                        Debe completar nombre
+                    </div>
+                    <br>
+                    <label>Rut:</label>
+                    <input type="text" class="form-control" formControlName="rut" placeholder="Ingrese rut con guion">
+                    <div *ngIf="this.userForm.controls['rut'].errors?.['minlength']"style="color: red; font-style: italic;">
+                        Rut inválido
+                     </div><br>
 
+                </form>
+                <hr>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card" style="width: 18rem;">
+                            <img src="assets\Imagenes\banner.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Polera</h5>
+                              <p class="card-text">Polera Unisex S/M/L</p>
+                              <p class="card-text">$9990</p>
+                              
+                            </div>
+                          </div>
+                        <p style="text-align: right;">VALOR TOTAL:$9990</p>
+
+                    </div>
+                    <a (click)="onClick()" class="btn btn-primary">Finalizar compra</a>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
 <app-footer></app-footer>
+
+
    

@@ -50,8 +50,8 @@ export class NavbarComponent implements OnInit {
 
 
 onClick(){
-    alert("Para comprar rellene los datos de su tarjeta!")
-      this.router.navigate(['/tarjeta'])
+    
+      this.router.navigate(['/carrito'])
       
    
     
