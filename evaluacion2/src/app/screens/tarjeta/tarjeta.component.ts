@@ -14,6 +14,7 @@ export class TarjetaComponent implements OnInit {
   }
 
   onClick(){
+    this.router.navigate(['/carrito'])
     alert("Datos correctos, será redirigido al proceso de compra...")
       
       
