@@ -9,6 +9,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TarjetaComponent } from './screens/tarjeta/tarjeta.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { HomeComponent } from './home/home.component';
+import { DireccionComponent } from './direccion/direccion.component';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,6 +25,7 @@ const routes: Routes = [
   { path: 'tarjeta', component: TarjetaComponent},
   { path: 'carrito', component: CarritoComponent},
   { path: 'home', component: HomeComponent},
+  {path: 'direccion', component: DireccionComponent},
 
 
   { path: '**', redirectTo: '/login' }

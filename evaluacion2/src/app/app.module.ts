@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { TarjetaComponent } from './screens/tarjeta/tarjeta.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { HomeComponent } from './home/home.component';
+import { DireccionComponent } from './direccion/direccion.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { HomeComponent } from './home/home.component';
     TarjetaComponent,
     CarritoComponent,
     HomeComponent,
+    DireccionComponent,
     
   ],
   imports: [

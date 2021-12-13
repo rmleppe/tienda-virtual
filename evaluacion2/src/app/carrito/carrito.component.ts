@@ -29,8 +29,8 @@ ngOnInit(): void {
 }
 
 onClick(){
-  alert("Para comprar rellene los datos de su tarjeta!")
-    this.router.navigate(['/tarjeta'])
+  alert("Ingrese sus datos de envio")
+    this.router.navigate(['/direccion'])
     
  
   

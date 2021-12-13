@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<br>
+<h1 style="text-align: center;">Dirección de envio</h1>
+
+<div class="container">
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="userForm">
+            <label>Calle</label>
+            <input type="text" class="form-control" formControlName="calle">
+            <div *ngIf="this.userForm.controls['calle'].errors?.['required']" style="color: red; font-style: italic;">
+                Debe completar calle
+              </div><br>
+            <label>Numero</label>
+            <input type="text" class="form-control" formControlName="numero">
+            <div *ngIf="this.userForm.controls['numero'].errors?.['required']" style="color: red; font-style: italic;">
+                Debe completar numero
+              </div><br>
+            <label>Ciudad</label>
+            <input type="text" class="form-control" formControlName="ciudad">
+            <div *ngIf="this.userForm.controls['ciudad'].errors?.['required']" style="color: red; font-style: italic;">
+                Debe completar ciudad
+              </div><br>
+            <label>Region</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Elija Región</option>
+                <option value="1">Región de Arica y Parinacota</option>
+                <option value="2">Región de Tarapacá</option>
+                <option value="3">Región de Atacama</option>
+                <option value="3">Región de Coquimbo</option>
+                <option value="3">Región de Valparaíso</option>
+                <option value="3">Región Metropolitana de Santiago</option>
+                <option value="3">Región del Libertador General Bernardo O'Higgins</option>
+                <option value="3">Región del Maule</option>
+                <option value="3">Región del Biobío</option>
+                <option value="3">Región de La Araucanía</option>
+                <option value="3">Región de Los Ríos</option>
+                <option value="3">Región de Los Lagos</option>
+                <option value="3">Región de Aysén del General Carlos Ibáñez del Campo</option>
+                <option value="3">Región de Magallanes y de la Antártica Chilena</option>
+
+              </select><br>
+              <label>Codigo Postal</label>
+              <input type="text" class="form-control" formControlName="codigo">
+              <div *ngIf="this.userForm.controls['codigo'].errors?.['required']" style="color: red; font-style: italic;">
+                Debe completar codigo postal
+              </div><br>
+
+              <button class="btn btn-primary"  (click)=onClick()>Ingresar</button>
+        </form>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>
