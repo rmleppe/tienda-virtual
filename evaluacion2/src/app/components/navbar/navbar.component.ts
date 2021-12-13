@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
   }
 
   getWeatherData(){
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=Santiago&appid=6498fa78c05750bc808d792c7084796d')
+    fetch('https://api.openweathermap.org/data/2.5/weather?id=3868121&appid=6498fa78c05750bc808d792c7084796d')
     .then(response=>response.json())
     .then(data=>{this.setWeatherData(data);})
 
