@@ -10,21 +10,25 @@
                                     <strong>Tarjeta de credito</strong>&nbsp; &nbsp; 
                                     <small>Ingrese su tarjeta</small>
                                 </div>
+                                <form [formGroup]="userForm">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="name">Nombre</label>
-                                                <input class="form-control" id="name" type="text" placeholder="Ingrese su nombre">
+                                                <input class="form-control" id="name"  formControlName="name" type="text" placeholder="Ingrese su nombre">
                                             </div>
                                         </div>
                                     </div>
+                                    <div *ngIf="this.userForm.controls['name'].errors?.['required']" style="color: red; font-style: italic;">
+                                        Debe completar nombre
+                                      </div><br>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label for="ccnumber">Numero de tarjeta</label>
                                                 <div class="input-group">
-                                                    <input class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
+                                                    <input class="form-control"  formControlName="numero" type="text" placeholder="0000 0000 0000 0000" autocomplete="email">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
                                                             <i class="mdi mdi-credit-card"></i>
@@ -34,10 +38,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div *ngIf="this.userForm.controls['numero'].errors?.['required']" style="color: red; font-style: italic;">
+                                        Debe completar numero
+                                      </div><br>
+                                      <div *ngIf="this.userForm.controls['numero'].errors?.['maxlength']" style="color: red; font-style: italic;">
+                                        Numero de tarjeta debe ser maximo de 16 caracteres
+                                      </div><br>
                                     <div class="row">
                                         <div class="form-group col-sm-4">
                                             <label for="ccmonth">Mes</label>
-                                            <select class="form-control" id="ccmonth">
+                                            <select class="form-control" id="ccmonth" >
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -72,11 +82,15 @@
                                         <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label for="cvv">CVV/CVC</label>
-                                                <input class="form-control" id="cvv" type="text" placeholder="123">
+                                                <input class="form-control"  formControlName="cvv" id="cvv" type="text" placeholder="123">
                                             </div>
+                        
+                                            
                                         </div>
+                                       
                                     </div>
                                 </div>
+                                </form>
                                 <div class="card-footer">
                                     <button class="btn btn-sm btn-success float-right" type="submit" (click)="onClick()">
                                         <i class="mdi mdi-gamepad-circle"></i> Continuar</button>&nbsp; &nbsp; 
